@@ -21,6 +21,12 @@ src/main/java/com/game/
 └── factories/      # Factory classes for strategy creation
 ```
 
+## UML Class Diagram
+
+The following UML diagram illustrates the Low-Level Design (LLD) of the Snake and Ladder game, showing the relationships between classes and the implementation of design patterns:
+
+![UML Class Diagram](LLDDesign.png)
+
 ## How to Run
 
 1. Compile the project:
