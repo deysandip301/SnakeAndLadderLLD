@@ -4,6 +4,11 @@
 # Log files
 *.log
 
+# Test and demo files (not for production)
+*Test.java
+AutoGameDemo.java
+GITHUB_SETUP.md
+
 # BlueJ files
 *.ctxt
 
