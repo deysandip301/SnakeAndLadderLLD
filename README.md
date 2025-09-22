@@ -36,7 +36,14 @@ The following UML diagram illustrates the Low-Level Design (LLD) of the Snake an
    javac -d target -cp . src/main/java/com/game/**/*.java
    ```
 
-2. Run the game:
+2. Run the game (multiple options):
+   
+   **Simple game with default strategies:**
+   ```bash
+   java -cp target com.game.SimpleGameDemo
+   ```
+   
+   **Full game with custom strategies:**
    ```bash
    java -cp target com.game.GameDemo
    ```

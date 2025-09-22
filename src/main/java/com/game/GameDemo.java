@@ -18,11 +18,21 @@ public class GameDemo {
                     new HumanPlayer("Alice"),
                     new HumanPlayer("Bob"));
 
+            // Option 1: Simple game creation with default strategies
+            // Uncomment this block and comment the next one to use default strategies
+            /*
+            Game snakeAndLadderGame = Game.builder()
+                    .withPlayers(players)
+                    .withRandomLayout(100)
+                    .build(); // Uses default strategies automatically!
+            */
+
+            // Option 2: Game creation with custom strategies
             Game.Builder gameBuilder = Game.builder()
                     .withPlayers(players)
                     .withRandomLayout(100);
 
-            // You can change this to EXACT_MATCH to test the exact match winning strategy
+            // Optional: You can customize strategies or leave them as default
             WinningStrategy winningStrategy = WinningStrategyFactory
                     .createWinningStrategy(WinningStrategyType.EXACT_MATCH);
             KillingStrategy killingStrategy = KillingStrategyFactory

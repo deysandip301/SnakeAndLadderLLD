@@ -83,11 +83,16 @@ public class Game {
         return new Builder();
     }
 
+    /**
+     * Builder class for creating Game instances with optional configuration.
+     * Uses sensible defaults for all optional parameters including strategies.
+     */
     public static class Builder {
         private int size;
         private List<Player> players;
         private final List<Transport> transports = new ArrayList<>();
         private final Dice dice = new SixSidedDice();
+        // Default strategies - can be overridden but not required
         private WinningStrategy winningStrategy = new DefaultWinningStrategy();
         private KillingStrategy killingStrategy = new DefaultKillingStrategy();
         private boolean isLayoutSet = false;
@@ -165,11 +170,19 @@ public class Game {
             return this;
         }
 
+        /**
+         * Optional: Override the default winning strategy.
+         * If not called, uses DefaultWinningStrategy.
+         */
         public Builder withWinningStrategy(WinningStrategy strategy) {
             this.winningStrategy = strategy;
             return this;
         }
 
+        /**
+         * Optional: Override the default killing strategy.
+         * If not called, uses DefaultKillingStrategy.
+         */
         public Builder withKillingStrategy(KillingStrategy strategy) {
             this.killingStrategy = strategy;
             return this;
