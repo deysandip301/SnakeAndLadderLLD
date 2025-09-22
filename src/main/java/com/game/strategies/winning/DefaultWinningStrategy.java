@@ -5,7 +5,7 @@ public class DefaultWinningStrategy implements WinningStrategy {
     public boolean hasWon(int position, int boardSize) {
         return position >= boardSize;
     }
-    
+
     @Override
     public int calculateNewPosition(int currentPosition, int diceRoll, int boardSize) {
         int newPosition = currentPosition + diceRoll;

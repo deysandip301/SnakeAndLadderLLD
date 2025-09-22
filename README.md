@@ -5,6 +5,8 @@ A well-architected implementation of the classic Snake and Ladder board game in 
 ## Features
 
 - **Strategy Pattern**: Pluggable winning and killing strategies
+  - **Default Winning Strategy**: Player wins by reaching or exceeding board size
+  - **Exact Match Winning Strategy**: Player must roll exact number to reach final position
 - **Factory Pattern**: Clean creation of strategy instances
 - **Builder Pattern**: Flexible game configuration
 - **Clean Architecture**: Well-organized package structure

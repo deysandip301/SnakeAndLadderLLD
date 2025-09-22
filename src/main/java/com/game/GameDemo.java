@@ -23,7 +23,8 @@ public class GameDemo {
                     .withRandomLayout(100);
 
             // You can change this to EXACT_MATCH to test the exact match winning strategy
-            WinningStrategy winningStrategy = WinningStrategyFactory.createWinningStrategy(WinningStrategyType.EXACT_MATCH);
+            WinningStrategy winningStrategy = WinningStrategyFactory
+                    .createWinningStrategy(WinningStrategyType.EXACT_MATCH);
             KillingStrategy killingStrategy = KillingStrategyFactory
                     .createKillingStrategy(KillingStrategyType.START_AGAIN);
 
