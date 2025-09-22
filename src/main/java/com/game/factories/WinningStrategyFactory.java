@@ -9,7 +9,7 @@ public class WinningStrategyFactory {
             case DEFAULT:
                 return new DefaultWinningStrategy();
             case EXACT_MATCH:
-                return new DefaultWinningStrategy(); // Could be different implementation
+                return new ExactMatchWinningStrategy();
             default:
                 throw new IllegalArgumentException("Unknown winning strategy type: " + type);
         }

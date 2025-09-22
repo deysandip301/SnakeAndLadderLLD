@@ -51,22 +51,21 @@ public class Game {
         System.out.println(currentPlayer.getName() + " rolled a " + roll);
 
         int currentPosition = playerPositions.get(currentPlayer);
-        int newPosition = currentPosition + roll;
+        int newPosition = winningStrategy.calculateNewPosition(currentPosition, roll, board.getSize());
 
-        if (newPosition > board.getSize()) {
-            System.out.println("Overshot the board! Stay at " + currentPosition);
-        } else {
-            currentPosition = newPosition;
-            System.out.println(currentPlayer.getName() + " moved to " + currentPosition);
+        if (newPosition != currentPosition) {
+            System.out.println(currentPlayer.getName() + " moved to " + newPosition);
 
-            board.getTransportAt(currentPosition).ifPresent(transport -> {
+            // Check for transport (snake or ladder)
+            if (board.getTransportAt(newPosition).isPresent()) {
+                Transport transport = board.getTransportAt(newPosition).get();
                 System.out.println("Landed on a " + transport.getEntityType() + "! Moving from " +
                         transport.getStart() + " to " + transport.getEnd());
-                playerPositions.put(currentPlayer, transport.getEnd());
-            });
+                newPosition = transport.getEnd();
+            }
 
-            playerPositions.put(currentPlayer, currentPosition);
-            killingStrategy.apply(currentPlayer, currentPosition, playerPositions);
+            playerPositions.put(currentPlayer, newPosition);
+            killingStrategy.apply(currentPlayer, newPosition, playerPositions);
         }
 
         System.out.println(currentPlayer.getName() + " is now at position " + playerPositions.get(currentPlayer));

@@ -22,7 +22,8 @@ public class GameDemo {
                     .withPlayers(players)
                     .withRandomLayout(100);
 
-            WinningStrategy winningStrategy = WinningStrategyFactory.createWinningStrategy(WinningStrategyType.DEFAULT);
+            // You can change this to EXACT_MATCH to test the exact match winning strategy
+            WinningStrategy winningStrategy = WinningStrategyFactory.createWinningStrategy(WinningStrategyType.EXACT_MATCH);
             KillingStrategy killingStrategy = KillingStrategyFactory
                     .createKillingStrategy(KillingStrategyType.START_AGAIN);
 
